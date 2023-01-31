@@ -10,12 +10,12 @@ And get something like
 
 ```bash
  RUNS  ./test.js
-/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:3905
-      var evt = document.createEvent('Event');
-                         ^
+/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:3901
+          throw Error( "The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous." );
+          ^
 
-TypeError: Cannot read property 'createEvent' of null
-    at Object.invokeGuardedCallbackDev (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:3905:26)
+Error: The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.
+    at Object.invokeGuardedCallbackDev (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:3901:17)
     at invokeGuardedCallback (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:4056:31)
     at flushPassiveEffectsImpl (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:23543:11)
     at unstable_runWithPriority (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/scheduler/cjs/scheduler.development.js:468:12)
@@ -23,7 +23,7 @@ TypeError: Cannot read property 'createEvent' of null
     at flushPassiveEffects (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom.development.js:23447:14)
     at Object.<anonymous>.flushWork (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom-test-utils.development.js:992:10)
     at Immediate.<anonymous> (/home/eps1lon/Development/throwaway/react-testing-library-error-repro/node_modules/react-dom/cjs/react-dom-test-utils.development.js:1003:11)
-    at processImmediate (internal/timers.js:464:21)
+    at processImmediate (node:internal/timers:466:21)
 ```
 
 Environment:
