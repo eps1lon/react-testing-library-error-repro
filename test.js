@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React, { useEffect } from "react";
 import * as ReactDOM from "react-dom";
 import * as ReactDOMTestUtils from "react-dom/test-utils";
